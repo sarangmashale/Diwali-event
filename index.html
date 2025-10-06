@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diwali & Garba Night 2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #1a0a2e;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Animated background pattern */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255, 107, 53, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(247, 147, 30, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(254, 202, 87, 0.1) 0%, transparent 50%);
+            animation: pulse 8s ease-in-out infinite;
+            z-index: 0;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Floating diyas */
+        .floating-diya {
+            position: fixed;
+            font-size: 25px;
+            animation: float 6s ease-in-out infinite;
+            z-index: 1;
+            opacity: 0.4;
+        }
+
+        .diya1 { top: 10%; left: 5%; animation-delay: 0s; }
+        .diya2 { top: 20%; right: 8%; animation-delay: 2s; }
+        .diya3 { bottom: 15%; left: 10%; animation-delay: 4s; }
+        .diya4 { bottom: 25%; right: 12%; animation-delay: 1s; }
+        .diya5 { top: 50%; left: 3%; animation-delay: 3s; }
+        .diya6 { top: 60%; right: 5%; animation-delay: 5s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        /* Rangoli pattern decorations */
+        .rangoli-pattern {
+            position: fixed;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px dashed rgba(255, 107, 53, 0.2);
+            animation: rotate 20s linear infinite;
+            z-index: 1;
+        }
+
+        .pattern1 {
+            top: 5%;
+            right: 15%;
+            animation-delay: 0s;
+        }
+
+        .pattern2 {
+            bottom: 10%;
+            left: 20%;
+            animation-delay: -10s;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .container {
+            max-width: 680px;
+            width: 100%;
+            animation: fadeIn 0.8s ease-in;
+            position: relative;
+            z-index: 10;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            background: rgba(26, 10, 46, 0.8);
+            padding: 35px 30px;
+            border-radius: 25px;
+            box-shadow: 0 8px 32px rgba(255, 107, 53, 0.3);
+            border: 2px solid rgba(255, 107, 53, 0.3);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 107, 53, 0.1), transparent);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .diya-row {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .diya-flame {
+            animation: flicker 1.5s infinite;
+        }
+
+        .diya-flame:nth-child(2) { animation-delay: 0.3s; }
+        .diya-flame:nth-child(3) { animation-delay: 0.6s; }
+
+        @keyframes flicker {
+            0%, 100% { transform: scale(1) translateY(0); opacity: 1; }
+            50% { transform: scale(1.1) translateY(-3px); opacity: 0.9; }
+        }
+
+        .header h1 {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #feca57 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 34px;
+            margin-bottom: 12px;
+            font-weight: 800;
+            position: relative;
+            z-index: 2;
+        }
+
+        .header .subtitle {
+            color: #feca57;
+            font-size: 19px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .header p {
+            color: rgba(254, 202, 87, 0.9);
+            font-size: 15px;
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+        }
+
+        .events-section {
+            background: rgba(26, 10, 46, 0.8);
+            padding: 30px 25px;
+            border-radius: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 32px rgba(255, 107, 53, 0.3);
+            border: 2px solid rgba(255, 107, 53, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .section-title {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .link-item {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #feca57 100%);
+            padding: 20px 26px;
+            border-radius: 15px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.4s ease;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .link-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .link-item::after {
+            content: '✨';
+            position: absolute;
+            right: 60px;
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .link-item:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 8px 30px rgba(255, 107, 53, 0.6);
+        }
+
+        .link-item:hover::before {
+            left: 100%;
+        }
+
+        .link-item:hover::after {
+            opacity: 1;
+            right: 65px;
+        }
+
+        .link-icon {
+            font-size: 28px;
+            min-width: 35px;
+            text-align: center;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+        }
+
+        .link-text {
+            flex: 1;
+            text-align: left;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .link-arrow {
+            font-size: 20px;
+            opacity: 0.9;
+            transition: transform 0.4s ease;
+        }
+
+        .link-item:hover .link-arrow {
+            transform: translateX(5px);
+        }
+
+        .info-card {
+            background: rgba(26, 10, 46, 0.8);
+            padding: 25px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 6px 25px rgba(255, 107, 53, 0.25);
+            border: 2px solid rgba(255, 107, 53, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .info-card h3 {
+            background: linear-gradient(135deg, #ff6b35 0%, #feca57 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 19px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+        }
+
+        .info-card p {
+            color: rgba(254, 202, 87, 0.9);
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+
+        .info-card strong {
+            color: #feca57;
+            font-weight: 600;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #feca57;
+            font-size: 15px;
+            background: rgba(26, 10, 46, 0.6);
+            padding: 20px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 107, 53, 0.3);
+            box-shadow: 0 4px 20px rgba(255, 107, 53, 0.2);
+        }
+
+        footer p:first-child {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 28px;
+            }
+            
+            .diya-row {
+                font-size: 32px;
+            }
+
+            .link-item {
+                font-size: 15px;
+                padding: 18px 22px;
+            }
+
+            .link-icon {
+                font-size: 24px;
+            }
+
+            .floating-diya {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating diyas -->
+    <div class="floating-diya diya1">🪔</div>
+    <div class="floating-diya diya2">🪔</div>
+    <div class="floating-diya diya3">🪔</div>
+    <div class="floating-diya diya4">🪔</div>
+    <div class="floating-diya diya5">🪔</div>
+    <div class="floating-diya diya6">🪔</div>
+
+    <!-- Rangoli patterns -->
+    <div class="rangoli-pattern pattern1"></div>
+    <div class="rangoli-pattern pattern2"></div>
+
+    <div class="container">
+        <div class="header">
+            <div class="diya-row">
+                <span class="diya-flame">🪔</span>
+                <span class="diya-flame">🪔</span>
+                <span class="diya-flame">🪔</span>
+            </div>
+            <h1>Diwali Celebration & Garba Night 2025</h1>
+            <p class="subtitle">✨ Festival of Lights & Colors ✨</p>
+            <p>Join us for an enchanting evening of traditions, creativity, and joy! Register for our exciting competitions and celebrate Diwali with us.</p>
+        </div>
+
+        <div class="events-section">
+            <div class="section-title">
+                <span>🎨</span>
+                <span>Competition Registrations</span>
+            </div>
+            <div class="links">
+                <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=l80Vb6f240Gyxa1Bk5dkdg49j71MZ51Isv7-boyNx-9URUZPRjJXVFE1TjhBQlhNSkI4VVMyTFBTNy4u" class="link-item" target="_blank">
+                    <span class="link-icon">🌺</span>
+                    <span class="link-text">Rangoli Competition</span>
+                    <span class="link-arrow">→</span>
+                </a>
+
+                <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=l80Vb6f240Gyxa1Bk5dkdg49j71MZ51Isv7-boyNx-9URTBLWjRaSjJaMTdSTEJaRVZPWVZKRjBQUy4u" class="link-item" target="_blank">
+                    <span class="link-icon">🪔</span>
+                    <span class="link-text">Diya Painting Competition</span>
+                    <span class="link-arrow">→</span>
+                </a>
+
+                <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=l80Vb6f240Gyxa1Bk5dkdg49j71MZ51Isv7-boyNx-9URFhQNVJIV0U4NlpDS0pNQk9IUU5WWkpMNS4u" class="link-item" target="_blank">
+                    <span class="link-icon">📸</span>
+                    <span class="link-text">Photography & Painting Competition</span>
+                    <span class="link-arrow">→</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="info-card">
+            <h3>📅 Event Details</h3>
+            <p><strong>Date:</strong> October 17, 2025</p>
+            <p><strong>Time:</strong> 3:30 PM onwards</p>
+            <p><strong>Venue:</strong> CeNSE Backyard</p>
+            <p><strong>Registration Deadline:</strong> October 13, 2025 (11:59 PM)</p>
+        </div>
+
+        <div class="info-card">
+            <h3>🏆 Competitions Overview</h3>
+            <p><strong>Rangoli Competition:</strong> Showcase your creativity with vibrant colors and traditional designs</p>
+            <p><strong>Diya Painting:</strong> Transform plain diyas into beautiful works of art</p>
+            <p><strong>Photography & Painting:</strong> Capture or create the essence of "Pursuit of Happiness" through your lens or brush</p>
+        </div>
+
+        <div class="info-card">
+            <h3>ℹ️ Important Information</h3>
+            <p>• All participants must register through the forms above</p>
+            <p>• Exciting prizes for competition winners</p>
+            <p>• Participants are encouraged to bring their own colors for diya painting and rangoli (Basic rangoli colors will be provided)</p>
+        </div>
+
+        <footer>
+            <p>✨ शुभ दीपावली - Happy Diwali! ✨</p>
+            <p style="margin-top: 10px; font-size: 13px; opacity: 0.9;">For queries, contact: [Add Contact Info]</p>
+        </footer>
+    </div>
+</body>
+</html>
